@@ -4,7 +4,7 @@ default['sysfs']['service'] = 'sysfsutils'
 
 default['sysfs']['init_type'] = value_for_platform(
   %w(redhat centos) => {
-    '< 7' => 'sysv',
+    '< 7.0' => 'sysv',
     :default => 'systemd'
   },
   :default => nil
@@ -12,7 +12,7 @@ default['sysfs']['init_type'] = value_for_platform(
 
 default['sysfs']['disable_tuned'] = value_for_platform(
   %w(redhat centos) => {
-    '< 7' => false,
+    '< 7.0' => false,
     :default => true
   },
   :default => false
